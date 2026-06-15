@@ -6,13 +6,6 @@ public class Main{
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         int opcao = 0;
-        Jogador Player[]= new Jogador[5];
-        
-        for (int i=0; i<=5; i++){
-        System.out.println("digite o nickname do coiso: ");
-       Player[i]= new Jogador();
-    }
-
         do{
         System.out.println("Gerenciamento de campeonato de Valorant");
         System.out.println("1. cadasrar equipe");
