@@ -40,44 +40,55 @@ public class Main{
                 System.out.println("Jogador " + jogador[0].getNickname() + " cadastrado com sucesso na equipe " + equipe.getNome());
 
                 break;
+
             case 2:
-                //
-                System.out.println("Ver estatísticas de qual jogador?");
-                System.out.println("1. " + jogador[0].getNickname());
-                System.out.println("2. " + jogador[1].getNickname());
-                System.out.println("3. " + jogador[2].getNickname());
-                System.out.println("4. " + "Sair.");
+                
+                while (opcaoCase2 != 1){
+                System.out.println("\nJogadores Disponíveis: ");
+                    
+                //aqui vai agregar um número para cada jogador, para o usuário escolher qual jogador ele quer ver as estatísticas.
+                     for (int i = 0; i < jogador.length; i++){
+                    System.out.println("Número: " + i + " - " + jogador[i].getNickname());
+                   }
+
+                //Escolhe o número do jogador para ver as estatísticas
+                    System.out.println("\nEscolha o número do jogador para ver suas estatísticas: "); 
+                    int i= scanner.nextInt();
+
+                    System.out.println(jogador[i].toString());
+                
+
+                System.out.println("1. " + "Sair.");
+                System.out.println("2. " + "Ver estatísticas de outro jogador.");
                 opcaoCase2 = scanner.nextInt();
 
                 switch (opcaoCase2) {
                     case 1: 
-                        System.out.println(jogador[0].toString());
-                        break;
-
-                    case 2:
-                        System.out.println(jogador[1].toString());
-                        break;
-
-                    case 3:
-                        System.out.println(jogador[2].toString());
-                        break;
-
-                    case 4:
+                    
                         System.out.println("Saindo...");
                         break;
 
+                    case 2:
+                        System.out.println("Carregando...");
+                        break;
+                    
+
+
                 default:
                     System.out.println(")Opção inválida");
-                
+                }
             }
                 
                 break;
+
             case 3:
                 System.out.println("Ver próxima partida");
                 break;
+
             case 4:
                 System.out.println("Sair");
                 break;
+
             default:
                 System.out.println("Opção inválida");
             
