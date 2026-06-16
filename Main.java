@@ -9,10 +9,13 @@ public class Main{
         int opcao = 0;//Var. 1 switch
         int opcaoCase2 = 0;//Var. 2 switch
 
-
-        Jogador jogador1 = new Jogador("Thiikkj", "Naruto", 4, 3, 9, 4.3333333);
+        Jogador jogador[] = new Jogador[3];
+        //Criando jogadores para o switch case 2
+        jogador[0] = new Jogador("Thiikkj", "Naruto", 4, 3, 9, 4.3333333);
+        jogador[1] = new Jogador("leleco", "Itachi", 99, 1, 23, 122.0);
+        jogador[2] = new Jogador("JoPaReis", "Tsunade", 0, 1, 30, 30.0);
         
-
+        
         
         do{
         System.out.println("Gerenciamento de campeonato de Valorant");
@@ -21,7 +24,8 @@ public class Main{
         System.out.println("3. ver próxima partida");
         System.out.println("4. sair");
          opcao = scanner.nextInt();
-        switch (opcao) {
+
+            switch (opcao) {
             case 1:
                 System.out.print("Digite o nome e a tag da equipe: ");
                 Equipe equipe = new Equipe(scanner.next(), scanner.next(), null);
@@ -33,20 +37,40 @@ public class Main{
                 System.out.print("Digite o nome e o agente do jogador: ");
                 
                 
-                System.out.println("Jogador " + jogador1.getNickname() + " cadastrado com sucesso na equipe " + equipe.getNome());
+                System.out.println("Jogador " + jogador[0].getNickname() + " cadastrado com sucesso na equipe " + equipe.getNome());
 
                 break;
             case 2:
-                
-                switch (opcaoCase2){
+                //
                 System.out.println("Ver estatísticas de qual jogador?");
-                System.out.println("1. " + jogador1.t);
-               
+                System.out.println("1. " + jogador[0].getNickname());
+                System.out.println("2. " + jogador[1].getNickname());
+                System.out.println("3. " + jogador[2].getNickname());
+                System.out.println("4. " + "Sair.");
+                opcaoCase2 = scanner.nextInt();
 
+                switch (opcaoCase2) {
+                    case 1: 
+                        System.out.println(jogador[0].toString());
+                        break;
 
+                    case 2:
+                        System.out.println(jogador[1].toString());
+                        break;
 
+                    case 3:
+                        System.out.println(jogador[2].toString());
+                        break;
 
-                }
+                    case 4:
+                        System.out.println("Saindo...");
+                        break;
+
+                default:
+                    System.out.println(")Opção inválida");
+                
+            }
+                
                 break;
             case 3:
                 System.out.println("Ver próxima partida");
@@ -56,10 +80,14 @@ public class Main{
                 break;
             default:
                 System.out.println("Opção inválida");
+            
+
         }
+            
         }while(opcao!= 4);
         scanner.close();
         random.doubles();
         
     }
 }
+
